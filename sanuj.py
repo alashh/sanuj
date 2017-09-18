@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
-from passcode import token
-from datetime import timedelta
+from passcode import token #Token for api auth located in passcode.py
 
 bot = commands.Bot(command_prefix='qilbot ', description='My test bed for random python bots and what they do')
 lobbies = []
@@ -39,9 +38,8 @@ async def techstuff():
 @bot.event
 async def on_message(message):
     if message.content.startswith(r'steam://joinlobby/') and message.author != bot.user:
-        lobbies.append("{}#{}: {} @ {}".format(str(message.author).partition("#")[0], message.channel, message.content, message.timestamp))
-        print("New Lobby Added to list: {} By: {}#{} timestamp: {}".format(message.content, str(message.author).partition("#")[0], message.channel, message.timestamp))
+        lobbies.append("{}#{}: {} @ {}".format(str(message.author).partition("#")[0], message.channel, message.content, message.timestamp)) #Adds lobby to the lobby list above
         await bot.send_message(message.channel, "New Lobby Added to list: {} By: {}#{} timestamp: {}".format(message.content, str(message.author).partition("#")[0], message.channel, message.timestamp))
-    await bot.process_commands(message)
+    await bot.process_commands(message) #to end the message function, needed or else the block gets stuck.
 
 bot.run(token)
