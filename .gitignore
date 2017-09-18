@@ -102,4 +102,4 @@ venv.bak/
 .mypy_cache/
 
 ##secret key for Discord
-passkey.py
+passcode.py
