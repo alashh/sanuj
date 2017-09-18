@@ -20,7 +20,7 @@ async def on_message(message):
     if message.content.startswith(r'steam://joinlobby/'):
         user = message.author
         newlobby = message.content
-        lobbies = lobbies.append(newlobby)
+        # lobbies = lobbies.append(newlobby)
         await client.send_message(message.channel, "New Lobby Added to list: {} by {} ".format(newlobby, user))
 
 bot.run(token)
