@@ -8,6 +8,6 @@ itsdangerous==0.24
 Jinja2>=2.10.1
 MarkupSafe==1.0
 multidict==3.2.0
-numpy==1.13.1
+numpy==1.21.0
 websockets==3.4
 Werkzeug==0.15.3
